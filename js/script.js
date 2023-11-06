@@ -30,3 +30,28 @@ const teamMember = [
         img: "barbara-ramos-graphic-designer.jpg",
     },
 ]
+
+let card = "";
+
+for (i = 0; i < teamMember.length; i++) {
+    const curMember = teamMember[i];
+    card += `
+        <div class="col-3">
+            <div class="card text-center">
+                <img src="img/${curMember.img}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h2 class="card-title">
+                        ${curMember.name}
+                    </h2>
+                    <p class="card-text">
+                        ${curMember.role}
+                    </p>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+console.log(card);
+
+document.getElementById("card").innerHTML = card;
